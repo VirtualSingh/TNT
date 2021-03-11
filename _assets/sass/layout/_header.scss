@@ -1,0 +1,48 @@
+.header {
+  height: 95vh;
+  background: linear-gradient(to right bottom, #02aab0, #00cdac);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  z-index: 0;
+
+  @include device(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85vh);
+  }
+
+  & video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    z-index: -10;
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+    transition: all 1s;
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
